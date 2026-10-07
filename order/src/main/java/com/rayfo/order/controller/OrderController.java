@@ -23,12 +23,13 @@ public class OrderController {
         }
     }
 
+    // GET /api/order -> langsung lengkap (order + produk + pelanggan)
     @GetMapping
-    public List<Orders> getAll(@RequestParam(value = "pelangganId", required = false) Long pelangganId) {
+    public List<ResponseTemplateVO> getAll(@RequestParam(value = "pelangganId", required = false) Long pelangganId) {
         if (pelangganId != null) {
-            return orderService.getByPelanggan(pelangganId);
+            return orderService.getDetailByPelanggan(pelangganId);
         }
-        return orderService.getAll();
+        return orderService.getAllDetail();
     }
 
     @GetMapping("/{id}")
@@ -38,12 +39,6 @@ public class OrderController {
             return ResponseEntity.status(404).body("Order tidak ditemukan");
         }
         return ResponseEntity.ok(order);
-    }
-
-    // ---- Endpoint yang memakai VO ----
-    @GetMapping("/detail")
-    public List<ResponseTemplateVO> getAllDetail() {
-        return orderService.getAllDetail();
     }
 
     @GetMapping("/{id}/detail")

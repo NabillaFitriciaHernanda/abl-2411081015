@@ -26,7 +26,9 @@ public class OrderService {
         return orderRepository.save(o);
     }
 
-    public List<Orders> getAll() { return orderRepository.findAll(); }
+    public List<Orders> getAll() {
+        return orderRepository.findAll();
+    }
 
     public Orders getById(Long id) {
         return orderRepository.findById(id).orElse(null);
@@ -77,6 +79,15 @@ public class OrderService {
         return hasil;
     }
 
+    public List<ResponseTemplateVO> getDetailByPelanggan(Long pelangganId) {
+        List<ResponseTemplateVO> hasil = new ArrayList<>();
+        for (Orders order : orderRepository.findByPelangganId(pelangganId)) {
+            hasil.add(susunDetail(order));
+        }
+        return hasil;
+    }
+
+    // ---------- Method bantu ----------
     private ResponseTemplateVO susunDetail(Orders order) {
         ProdukVO produk = clientService.getProduk(order.getProdukId());
         if (produk != null && produk.getIdJenis() != null) {
