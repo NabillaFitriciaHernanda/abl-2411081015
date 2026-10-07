@@ -5,7 +5,7 @@
             "name": "Spring Boot-PelangganApplication<pelanggan>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.rayfo.pelanggan.PelangganApplication",
+            "mainClass": "com.nabilla.pelanggan.PelangganApplication",
             "projectName": "pelanggan",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
@@ -15,7 +15,7 @@
             "name": "Spring Boot-OrderApplication<order>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.rayfo.order.OrderApplication",
+            "mainClass": "com.nabilla.order.OrderApplication",
             "projectName": "order",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
@@ -25,7 +25,7 @@
             "name": "Spring Boot-ProdukApplication<product>",
             "request": "launch",
             "cwd": "${workspaceFolder}",
-            "mainClass": "com.rayfo.product.ProdukApplication",
+            "mainClass": "com.nabilla.product.ProdukApplication",
             "projectName": "product",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
